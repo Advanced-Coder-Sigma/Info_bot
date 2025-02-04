@@ -14,11 +14,11 @@ logger = logging.getLogger(__name__)
 
 # Constants
 BOT_TOKEN = "7933486069:AAHRvgSHPyHIinNv7ArHYn8DlxaB8-A0UxU"  # Replace with your bot token
-ALLOWED_GROUP_ID = -1002392794494 # Replace with your group ID
+ALLOWED_GROUP_ID = -1002489902538 # Replace with your group ID
 
 # Utility Functions
 def get_profile_info(uid, region):
-    url = f"https://krishna-psi.vercel.app/profile_info?uid={uid}&region={region}&key=teamXkrishna"
+    url = f"https://r1-wlx-apii.vercel.app/profile_info?uid={uid}&region={region}"
     try:
         response = requests.get(url)
         response.raise_for_status()
@@ -81,8 +81,8 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
         leader_last_login = format_timestamp(captainBasicInfo.get('lastLoginAt', 'Not Available'))
 
         formatted_message = (
-            f"<b>ACCOUNT INFO:</b>\n\n"
-            f"┌🧑‍💻 <b>ACCOUNT BASIC INFO</b>\n"
+            f"👤<b>ACCOUNT INFO:</b>\n\n"
+            f"├─<b>ACCOUNT BASIC INFO</b>\n"
             f"├─ <b>Name:</b> {escape_markdown(account_info.get('AccountName', 'Unknown'))}\n"
             f"├─ <b>UID:</b> {uid}\n"
             f"├─ <b>Level:</b> {account_info.get('AccountLevel', 'N/A')} (Exp: {account_info.get('AccountEXP', 'N/A')})\n"
@@ -130,7 +130,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
             f"    └─ <b>Leader BR Points:</b> {captainBasicInfo.get('rankingPoints', 'N/A')}\n\n"
 
             f"<b>OWNER :</b>                                ☠ @Bhaiya_chips ☠\n\n"
-            f"<b>FF GROUP LINK :                           ☠ https://t.me/BSff_community</b> ☠ "
+            f"<b>FF GROUP LINK :                           ☠ https://t.me/Sigmaff_community</b> ☠ "
         )
 
         await message.edit_text(formatted_message, parse_mode="HTML")
